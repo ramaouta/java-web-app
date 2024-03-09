@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:alpine-slim as build
+FROM adoptopenjdk/openjdk11:alpine-slim 
 WORKDIR /workspace/app
 
 COPY mvnw .
@@ -8,7 +8,6 @@ COPY src src
 
 RUN mvn package -DskipTests
 ARG PORT=8180
-FROM adoptopenjdk/openjdk11:alpine-slim
 WORKDIR /workspace/app/target
 ENTRYPOINT ["java","-jar","demo-0.0.1-SNAPSHOT.jar"]
 EXPOSE $PORT
