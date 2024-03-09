@@ -10,5 +10,5 @@ RUN ./mvnw package -DskipTests
 ARG PORT=8180
 FROM adoptopenjdk/openjdk11:alpine-slim
 WORKDIR /workspace/app/target
-ENTRYPOINT ["java","-jar","com.example.demo.DemoApplication"]
+ENTRYPOINT ["java","-jar","com.example.demo.DemoApplication.jar"]
 EXPOSE $PORT
