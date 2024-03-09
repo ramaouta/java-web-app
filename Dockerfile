@@ -1,4 +1,4 @@
-FROM  eclipse-temurin:11-jdk
+FROM maven:3.8.6-eclipse-temurin-11-alpine AS maven
 WORKDIR /workspace/app
 
 COPY mvnw .
