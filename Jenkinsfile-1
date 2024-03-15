@@ -7,7 +7,7 @@ pipeline {
     stage('Scan') {
       steps {
         withSonarQubeEnv(installationName: 'sq1') { 
-           sh 'mvn clean test sonar:sonar'
+           sh 'mvn clean test sonar:sonar -Dsonar.host.url=http://192.168.240.138'
         }
       }
     }
